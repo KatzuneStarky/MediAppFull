@@ -1,55 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
+    android:background="#E83E14"
     tools:context=".LoginActivity">
 
-    <EditText
-        android:id="@+id/usernameTv"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Usuario"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/input_text"
-        android:padding="10dp"/>
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
 
-    <EditText
-        android:id="@+id/emailTv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Correo electronico"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/input_text"
-        android:padding="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Inicio de Sesion"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textColor="#fff"/>
 
-    <EditText
-        android:id="@+id/passTv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Contraseña"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:inputType="textPassword"
-        android:background="@drawable/input_text"
-        android:padding="10dp"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:elevation="10dp"
+            android:outlineAmbientShadowColor="@android:color/darker_gray"
+            android:background="@drawable/white_boarder"
+            tools:targetApi="p">
 
-    <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Iniciar Sesion"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/button_text"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        />
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                app:met_floatingLabel="normal"
+                android:hint="Correo Electronico"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                app:met_baseColor="#E83E14"
+                android:backgroundTint="#E83E14"
+                android:textColorHint="#E83E14"
+                android:textStyle="bold"
+                android:inputType="textEmailAddress"
+                app:met_textColor="#fff"/>
 
-</LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:elevation="10dp"
+            android:outlineAmbientShadowColor="@android:color/darker_gray"
+            android:background="@drawable/white_boarder"
+            tools:targetApi="p">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                app:met_floatingLabel="normal"
+                android:hint="Contraseña"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                app:met_baseColor="#E83E14"
+                android:backgroundTint="#E83E14"
+                android:textColorHint="#E83E14"
+                android:textStyle="bold"
+                android:inputType="textPassword"
+                app:met_textColor="#fff"/>
+
+        </FrameLayout>
+
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/progressbar"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/design_default_color_primary"
+            tools:targetApi="lollipop"
+            android:visibility="gone"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:elevation="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:outlineAmbientShadowColor="@android:color/darker_gray"
+            android:background="@drawable/white_boarder"
+            tools:targetApi="p">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Iniciar Sesion"
+                android:textColor="#E83E14"
+                android:textAllCaps="false"
+                android:id="@+id/login"
+                android:textSize="20dp"
+                android:background="?attr/selectableItemBackground"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:elevation="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="20dp"
+            android:outlineAmbientShadowColor="@android:color/darker_gray"
+            android:background="@drawable/white_boarder"
+            tools:targetApi="p">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Registrarse"
+                android:textColor="#E83E14"
+                android:textAllCaps="false"
+                android:id="@+id/register"
+                android:textSize="20dp"
+                android:background="?attr/selectableItemBackground"
+                />
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/olvidar"
+            android:text="Olvido su contraseña?"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:linksClickable="true"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

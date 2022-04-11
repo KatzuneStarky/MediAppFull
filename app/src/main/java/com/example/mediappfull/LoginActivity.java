@@ -16,8 +16,5 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        username = findViewById(R.id.usernameTv);
-        password = findViewById(R.id.passTv);
-        login = findViewById(R.id.loginBtn);
     }
 }

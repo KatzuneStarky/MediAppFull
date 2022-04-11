@@ -1,9 +1,320 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <include
+        android:id="@+id/toolbar"
+        android:layout = "@layout/bar_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@id/toolbar">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Registro"
+                android:gravity="center"
+                android:textColor="#E83E14"
+                android:textSize="30dp"
+                android:textStyle="bold"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_margin="20dp"
+                android:elevation="10dp"
+                android:outlineAmbientShadowColor="@android:color/darker_gray"
+                android:background="@drawable/white_boarder"
+                tools:targetApi="p">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/user"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    app:met_floatingLabel="normal"
+                    android:hint="Nombre de usuario"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    app:met_baseColor="#E83E14"
+                    android:backgroundTint="#E83E14"
+                    android:textColorHint="#E83E14"
+                    android:textStyle="bold"
+                    android:inputType="textPersonName"
+                    app:met_textColor="#fff"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_margin="20dp"
+                android:elevation="10dp"
+                android:outlineAmbientShadowColor="@android:color/darker_gray"
+                android:background="@drawable/white_boarder"
+                tools:targetApi="p">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    app:met_floatingLabel="normal"
+                    android:hint="Correo Electronico"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    app:met_baseColor="#E83E14"
+                    android:backgroundTint="#E83E14"
+                    android:textColorHint="#E83E14"
+                    android:textStyle="bold"
+                    android:inputType="textEmailAddress"
+                    app:met_textColor="#fff"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_margin="20dp"
+                android:elevation="10dp"
+                android:outlineAmbientShadowColor="@android:color/darker_gray"
+                android:background="@drawable/white_boarder"
+                tools:targetApi="p">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    app:met_floatingLabel="normal"
+                    android:hint="Contraseña"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    app:met_baseColor="#E83E14"
+                    android:backgroundTint="#E83E14"
+                    android:textColorHint="#E83E14"
+                    android:textStyle="bold"
+                    android:inputType="textPassword"
+                    app:met_textColor="#fff"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_margin="20dp"
+                android:elevation="10dp"
+                android:outlineAmbientShadowColor="@android:color/darker_gray"
+                android:background="@drawable/white_boarder"
+                tools:targetApi="p">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    app:met_floatingLabel="normal"
+                    android:hint="Numero telefonico"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    app:met_baseColor="#E83E14"
+                    android:backgroundTint="#E83E14"
+                    android:textColorHint="#E83E14"
+                    android:textStyle="bold"
+                    android:inputType="textPhonetic"
+                    app:met_textColor="#fff"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_margin="20dp"
+                android:elevation="10dp"
+                android:outlineAmbientShadowColor="@android:color/darker_gray"
+                android:background="@drawable/white_boarder"
+                tools:targetApi="p">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edad"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    app:met_floatingLabel="normal"
+                    android:hint="Edad"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    app:met_baseColor="#E83E14"
+                    android:backgroundTint="#E83E14"
+                    android:textColorHint="#E83E14"
+                    android:textStyle="bold"
+                    android:inputType="text"
+                    app:met_textColor="#fff"/>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <FrameLayout
+                    android:layout_width="250dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="20dp"
+                    android:elevation="10dp"
+                    android:outlineAmbientShadowColor="@android:color/darker_gray"
+                    android:background="@drawable/white_boarder"
+                    tools:targetApi="p">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/peso"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        app:met_floatingLabel="normal"
+                        android:hint="Peso"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        app:met_baseColor="#E83E14"
+                        android:backgroundTint="#E83E14"
+                        android:textColorHint="#E83E14"
+                        android:textStyle="bold"
+                        android:inputType="textEmailAddress"
+                        app:met_textColor="#fff"/>
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="KG"
+                    android:textSize="30dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <FrameLayout
+                    android:layout_width="250dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="20dp"
+                    android:elevation="10dp"
+                    android:outlineAmbientShadowColor="@android:color/darker_gray"
+                    android:background="@drawable/white_boarder"
+                    tools:targetApi="p">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/estatura"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        app:met_floatingLabel="normal"
+                        android:hint="Estatura"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        app:met_baseColor="#E83E14"
+                        android:backgroundTint="#E83E14"
+                        android:textColorHint="#E83E14"
+                        android:textStyle="bold"
+                        android:inputType="textEmailAddress"
+                        app:met_textColor="#fff"/>
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CM"
+                    android:textSize="30dp"/>
+
+            </LinearLayout>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20dp"
+                android:padding="10dp"
+                android:background="@drawable/orange_boarder"
+                android:id="@+id/radioButton">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="14dp"
+                    android:textColor="#fff"
+                    android:text="Hombre"
+                    android:buttonTint="#fff"
+                    android:id="@+id/hombre"
+                    tools:targetApi="LOLLIPOP"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="14dp"
+                    android:textColor="#fff"
+                    android:text="Mujer"
+                    android:buttonTint="#fff"
+                    android:id="@+id/mujer"
+                    tools:targetApi="LOLLIPOP"/>
+
+            </RadioGroup>
+
+            <ProgressBar
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/progressbar"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/design_default_color_primary"
+                tools:targetApi="lollipop"
+                android:visibility="gone"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:elevation="10dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="20dp"
+                android:outlineAmbientShadowColor="@android:color/darker_gray"
+                android:background="@drawable/orange_boarder"
+                tools:targetApi="p">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Registrarse"
+                    android:textColor="#fff"
+                    android:textAllCaps="false"
+                    android:id="@+id/register"
+                    android:textSize="20dp"
+                    android:background="?attr/selectableItemBackground"
+                    />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
