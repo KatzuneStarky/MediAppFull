@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         progressBar = findViewById(R.id.progressbar);
-
+        forgotPassword = findViewById(R.id.olvidar);
         firebaseAuth = FirebaseAuth.getInstance();
 
         registerBtn.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +58,13 @@ public class LoginActivity extends AppCompatActivity {
                 }else{
                     Login(txt_email, txt_password);
                 }
+            }
+        });
+
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
             }
         });
 

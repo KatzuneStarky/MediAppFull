@@ -102,7 +102,7 @@ public class RegisterActivity extends AppCompatActivity {
                     hashMap.put("weight", txt_peso);
                     hashMap.put("height", txt_altura);
                     hashMap.put("gender", gender);
-                    hashMap.put("imageURL", "default");
+                    hashMap.put("imageUrl", "default");
 
                     databaseReference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

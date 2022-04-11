@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ProfileActivity">
+    tools:context=".ProfileActivity"
+    android:background="#E83E14">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,25 +21,37 @@
             android:layout_marginTop="40dp"
             app:civ_border_width="2dp"
             android:layout_gravity="center"
-            android:src="@mipmap/ic_launcher"
+            android:src="@mipmap/ic_launcher_round"
             app:civ_border_color="#fff"
             android:layout_centerHorizontal="true"
             android:paddingTop="8dp"/>
 
         <TextView
+            android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/username"
-            android:text="Nombre de usuario"
-            android:gravity="center"
             android:layout_below="@id/profileImage"
-            android:textColor="#fff"
             android:layout_centerHorizontal="true"
-            android:textStyle="bold"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:text="Nombre de usuario"
+            android:textColor="#fff"
             android:textSize="25dp"
-            android:layout_margin="15dp"/>
+            android:textStyle="bold" />
 
     </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="50dp"
+        android:background="#fff"
+        android:backgroundTint="#fff"
+        android:layout_marginBottom="-50dp"
+        />
 
 
 </LinearLayout>
