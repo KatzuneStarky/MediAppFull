@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#E83E14"
-    app:titleTextColor="#fff"
-    style="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
-    app:popupTheme="@style/menuStyle"
-    android:id="@+id/toolbar">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ProfileActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="40dp">
+        android:layout_height="wrap_content"
+        android:background="#E83E14"
+        >
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:id="@+id/profileImage"
+            android:layout_marginTop="40dp"
             app:civ_border_width="2dp"
             android:layout_gravity="center"
             android:src="@mipmap/ic_launcher"
@@ -40,4 +40,5 @@
 
     </RelativeLayout>
 
-</androidx.appcompat.widget.Toolbar>
+
+</LinearLayout>
