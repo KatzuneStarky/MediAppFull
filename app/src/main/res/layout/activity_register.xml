@@ -13,8 +13,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_below="@id/toolbar">
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar1"
+                layout="@layout/toolbar_bar"/>
 
             <TextView
                 android:layout_width="match_parent"

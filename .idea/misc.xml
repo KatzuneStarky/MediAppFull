@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/button_text.xml" value="0.131" />
+        <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/input_text.xml" value="0.156" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/orange_boarder.xml" value="0.131" />
+        <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/rectangle.xml" value="0.156" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/white_boarder.xml" value="0.131" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_change_password.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_forgot_password.xml" value="0.1675929884566054" />
@@ -15,6 +17,7 @@
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/bar_layout.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/image_layout.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/select_image_layout.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/toolbar_bar.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/menu/profile_menu.xml" value="0.1675929884566054" />
       </map>
     </option>

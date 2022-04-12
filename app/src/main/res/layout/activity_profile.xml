@@ -8,6 +8,10 @@
     tools:context=".ProfileActivity"
     android:background="#E83E14">
 
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolbar_bar"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,8 +54,61 @@
         app:cardCornerRadius="50dp"
         android:background="#fff"
         android:backgroundTint="#fff"
-        android:layout_marginBottom="-50dp"
-        />
+        android:layout_marginBottom="-50dp">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:columnCount="2">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/rectangle"
+                android:text="Contactos"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:layout_margin="20dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/rectangle"
+                android:text="Contactos"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:layout_margin="20dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/rectangle"
+                android:text="Contactos"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:layout_margin="20dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/rectangle"
+                android:text="Contactos"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:layout_margin="20dp"
+                android:textStyle="bold"/>
+
+        </GridLayout>
+
+    </androidx.cardview.widget.CardView>
 
 
 </LinearLayout>
