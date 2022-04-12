@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable-v24/white_boarder1.xml" value="0.156" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/button_text.xml" value="0.131" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/input_text.xml" value="0.156" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/orange_boarder.xml" value="0.131" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/rectangle.xml" value="0.156" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/white_boarder.xml" value="0.131" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_change_password.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_data_user.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_forgot_password.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_main.xml" value="0.1" />

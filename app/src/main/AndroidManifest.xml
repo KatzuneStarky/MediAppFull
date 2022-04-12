@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MediAppFull">
         <activity
+            android:name=".DataUserActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChangePasswordActivity"
             android:exported="false" />
         <activity

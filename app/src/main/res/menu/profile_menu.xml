@@ -10,6 +10,12 @@
         app:showAsAction="never"/>
 
     <item
+        android:id="@+id/data"
+        android:orderInCategory="100"
+        android:title="Datos usuario"
+        app:showAsAction="never"/>
+
+    <item
         android:id="@+id/logout"
         android:orderInCategory="100"
         android:title="Cerrar Sesion"

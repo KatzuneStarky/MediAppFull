@@ -224,7 +224,9 @@ public class ProfileActivity extends AppCompatActivity {
         int id = item.getItemId();
         if(id == R.id.changePsw){
             startActivity(new Intent(ProfileActivity.this, ChangePasswordActivity.class));
-        }else if(id == R.id.logout){
+        }else if(id == R.id.data){
+            startActivity(new Intent(ProfileActivity.this, DataUserActivity.class));
+        } else if(id == R.id.logout){
             firebaseAuth.signOut();
             startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
             finish();
