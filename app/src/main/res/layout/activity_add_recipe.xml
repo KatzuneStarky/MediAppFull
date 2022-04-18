@@ -4,29 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".AddRecipeActivity">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolbar_bar"/>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical">
-
-            <include
-                android:id="@+id/toolbar1"
-                layout="@layout/toolbar_bar"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Registro"
+                android:text="Nueva Receta"
                 android:gravity="center"
                 android:textColor="#E83E14"
                 android:textSize="30dp"
+                android:textAlignment="center"
                 android:textStyle="bold"/>
 
             <FrameLayout
@@ -39,19 +42,19 @@
                 tools:targetApi="p">
 
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/user"
+                    android:id="@+id/recipeName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
                     app:met_floatingLabel="normal"
-                    android:hint="Nombre de usuario"
+                    android:hint="Nombre de receta"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     app:met_baseColor="#E83E14"
                     android:backgroundTint="#E83E14"
                     android:textColorHint="#fff"
                     android:textStyle="bold"
-                    android:inputType="textPersonName"
+                    android:inputType="text"
                     app:met_textColor="#fff"/>
 
             </FrameLayout>
@@ -66,19 +69,19 @@
                 tools:targetApi="p">
 
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/email"
+                    android:id="@+id/doctorName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
                     app:met_floatingLabel="normal"
-                    android:hint="Correo Electronico"
+                    android:hint="Nombre doctor"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     app:met_baseColor="#E83E14"
                     android:backgroundTint="#E83E14"
-                    android:textColorHint="#E83E14"
+                    android:textColorHint="#fff"
                     android:textStyle="bold"
-                    android:inputType="textEmailAddress"
+                    android:inputType="text"
                     app:met_textColor="#fff"/>
 
             </FrameLayout>
@@ -93,71 +96,17 @@
                 tools:targetApi="p">
 
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/password"
+                    android:id="@+id/medicamentName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
                     app:met_floatingLabel="normal"
-                    android:hint="Contraseña"
+                    android:hint="Nombre medicamento"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     app:met_baseColor="#E83E14"
                     android:backgroundTint="#E83E14"
-                    android:textColorHint="#E83E14"
-                    android:textStyle="bold"
-                    android:inputType="textPassword"
-                    app:met_textColor="#fff"/>
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_margin="20dp"
-                android:elevation="10dp"
-                android:outlineAmbientShadowColor="@android:color/darker_gray"
-                android:background="@drawable/white_boarder"
-                tools:targetApi="p">
-
-                <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/phone"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    app:met_floatingLabel="normal"
-                    android:hint="Numero telefonico"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
-                    app:met_baseColor="#E83E14"
-                    android:backgroundTint="#E83E14"
-                    android:textColorHint="#E83E14"
-                    android:textStyle="bold"
-                    android:inputType="textPhonetic"
-                    app:met_textColor="#fff"/>
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_margin="20dp"
-                android:elevation="10dp"
-                android:outlineAmbientShadowColor="@android:color/darker_gray"
-                android:background="@drawable/white_boarder"
-                tools:targetApi="p">
-
-                <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/edad"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    app:met_floatingLabel="normal"
-                    android:hint="Edad"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
-                    app:met_baseColor="#E83E14"
-                    android:backgroundTint="#E83E14"
-                    android:textColorHint="#E83E14"
+                    android:textColorHint="#fff"
                     android:textStyle="bold"
                     android:inputType="text"
                     app:met_textColor="#fff"/>
@@ -167,52 +116,115 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:orientation="horizontal">
 
-                <FrameLayout
-                    android:layout_width="250dp"
-                    android:layout_height="70dp"
+                <RadioGroup
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:layout_margin="20dp"
-                    android:elevation="10dp"
-                    android:outlineAmbientShadowColor="@android:color/darker_gray"
-                    android:background="@drawable/white_boarder"
-                    tools:targetApi="p">
+                    android:padding="10dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/orange_boarder"
+                    android:id="@+id/radioButton">
 
-                    <com.rengwuxian.materialedittext.MaterialEditText
-                        android:id="@+id/peso"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_horizontal"
-                        app:met_floatingLabel="normal"
-                        android:hint="Peso"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp"
-                        app:met_baseColor="#E83E14"
-                        android:backgroundTint="#E83E14"
-                        android:textColorHint="#E83E14"
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:inputType="textEmailAddress"
-                        app:met_textColor="#fff"/>
+                        android:textSize="14dp"
+                        android:textColor="#fff"
+                        android:text="Oral"
+                        android:buttonTint="#fff"
+                        android:id="@+id/oral"
+                        tools:targetApi="LOLLIPOP"/>
 
-                </FrameLayout>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="14dp"
+                        android:textColor="#fff"
+                        android:text="Inyeccion"
+                        android:buttonTint="#fff"
+                        android:id="@+id/inyeccion"
+                        tools:targetApi="LOLLIPOP"/>
 
-                <TextView
+                </RadioGroup>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="KG"
-                    android:textSize="30dp"/>
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="20dp"
+                        android:elevation="10dp"
+                        android:outlineAmbientShadowColor="@android:color/darker_gray"
+                        android:background="@drawable/white_boarder"
+                        tools:targetApi="p">
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/cantidad"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            app:met_floatingLabel="normal"
+                            android:hint="Cantidad"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            app:met_baseColor="#E83E14"
+                            android:backgroundTint="#E83E14"
+                            android:textColorHint="#fff"
+                            android:textStyle="bold"
+                            android:inputType="textPersonName"
+                            app:met_textColor="#fff"/>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="20dp"
+                        android:elevation="10dp"
+                        android:outlineAmbientShadowColor="@android:color/darker_gray"
+                        android:background="@drawable/white_boarder"
+                        tools:targetApi="p">
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/gramos"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            app:met_floatingLabel="normal"
+                            android:hint="Gramos"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            app:met_baseColor="#E83E14"
+                            android:backgroundTint="#E83E14"
+                            android:textColorHint="#fff"
+                            android:textStyle="bold"
+                            android:inputType="textPersonName"
+                            app:met_textColor="#fff"/>
+
+                    </FrameLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <FrameLayout
-                    android:layout_width="250dp"
+                    android:layout_width="150dp"
                     android:layout_height="70dp"
                     android:layout_margin="20dp"
                     android:elevation="10dp"
@@ -221,72 +233,52 @@
                     tools:targetApi="p">
 
                     <com.rengwuxian.materialedittext.MaterialEditText
-                        android:id="@+id/estatura"
+                        android:id="@+id/horas"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal"
                         app:met_floatingLabel="normal"
-                        android:hint="Estatura"
+                        android:hint="Horas"
                         android:paddingLeft="16dp"
                         android:paddingRight="16dp"
                         app:met_baseColor="#E83E14"
                         android:backgroundTint="#E83E14"
-                        android:textColorHint="#E83E14"
+                        android:textColorHint="#fff"
                         android:textStyle="bold"
-                        android:inputType="textEmailAddress"
+                        android:inputType="textPersonName"
                         app:met_textColor="#fff"/>
 
                 </FrameLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="CM"
-                    android:textSize="30dp"/>
+
+                <FrameLayout
+                    android:layout_width="150dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="20dp"
+                    android:elevation="10dp"
+                    android:outlineAmbientShadowColor="@android:color/darker_gray"
+                    android:background="@drawable/white_boarder"
+                    tools:targetApi="p">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/dias"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        app:met_floatingLabel="normal"
+                        android:hint="Dias"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        app:met_baseColor="#E83E14"
+                        android:backgroundTint="#E83E14"
+                        android:textColorHint="#fff"
+                        android:textStyle="bold"
+                        android:inputType="textPersonName"
+                        app:met_textColor="#fff"/>
+
+                </FrameLayout>
 
             </LinearLayout>
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="20dp"
-                android:padding="10dp"
-                android:background="@drawable/orange_boarder"
-                android:id="@+id/radioButton">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="14dp"
-                    android:textColor="#fff"
-                    android:text="Hombre"
-                    android:buttonTint="#fff"
-                    android:id="@+id/hombre"
-                    tools:targetApi="LOLLIPOP"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="14dp"
-                    android:textColor="#fff"
-                    android:text="Mujer"
-                    android:buttonTint="#fff"
-                    android:id="@+id/mujer"
-                    tools:targetApi="LOLLIPOP"/>
-
-            </RadioGroup>
-
-            <ProgressBar
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:id="@+id/progressbar"
-                android:layout_gravity="center"
-                android:indeterminateTint="@color/design_default_color_primary"
-                tools:targetApi="lollipop"
-                android:visibility="gone"/>
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -302,15 +294,25 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Registrarse"
+                    android:text="Agregar Medicamento"
                     android:textColor="#fff"
                     android:textAllCaps="false"
-                    android:id="@+id/register"
+                    android:id="@+id/addMedicament"
                     android:textSize="20dp"
-                    android:background="?attr/selectableItemBackground"
-                    />
+                    android:background="?attr/selectableItemBackground" />
 
             </FrameLayout>
+
+            <Button
+                android:id="@+id/btnaddMedicament"
+                android:layout_width="300dp"
+                android:layout_height="80dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:text="Guardar receta"
+                android:textSize="20dp" />
 
         </LinearLayout>
 

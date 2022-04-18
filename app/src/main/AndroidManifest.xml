@@ -3,6 +3,7 @@
     package="com.example.mediappfull">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MediAppFull">
+        <activity
+            android:name=".ShowRecipeMedicamentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Contact2AlertActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddRecipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShowRecipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecipeActivity"
+            android:exported="false" />
         <activity
             android:name=".EditContactActivity"
             android:exported="false" />
