@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white_boarder1"
+    tools:context=".AddContactActivity">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolbar_bar"/>
+
+    <ImageView
+        android:id="@+id/iconTel"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/users"
+        android:layout_marginTop="70dp"/>
+
+    <TextView
+        android:id="@+id/addcont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agregar Contactos"
+        android:layout_below="@id/iconTel"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="40dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addcont"
+        android:layout_marginTop="130dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:elevation="10dp"
+            android:outlineAmbientShadowColor="@android:color/darker_gray"
+            android:background="@drawable/white_boarder"
+            tools:targetApi="p">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/nameC"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                app:met_floatingLabel="normal"
+                android:hint="Nombre Usuario"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                app:met_baseColor="#E83E14"
+                android:backgroundTint="#E83E14"
+                android:textColorHint="#E83E14"
+                android:textStyle="bold"
+                android:inputType="textPersonName"
+                app:met_textColor="#fff"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:elevation="10dp"
+            android:outlineAmbientShadowColor="@android:color/darker_gray"
+            android:background="@drawable/white_boarder"
+            tools:targetApi="p">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                app:met_floatingLabel="normal"
+                android:hint="Numero Telefonico"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                app:met_baseColor="#E83E14"
+                android:backgroundTint="#E83E14"
+                android:textColorHint="#E83E14"
+                android:textStyle="bold"
+                android:inputType="textPhonetic"
+                app:met_textColor="#fff"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:elevation="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:outlineAmbientShadowColor="@android:color/darker_gray"
+            android:background="@drawable/orange_boarder"
+            tools:targetApi="p">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Agregar Contacto"
+                android:textColor="#fff"
+                android:textAllCaps="false"
+                android:id="@+id/addcontact"
+                android:textSize="20dp"
+                android:background="?attr/selectableItemBackground"
+                />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

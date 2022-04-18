@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MediAppFull">
         <activity
+            android:name=".EditContactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShowContactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddContactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ContactsActivity"
+            android:exported="false" />
+        <activity
             android:name=".DataUserActivity"
             android:exported="false" />
         <activity

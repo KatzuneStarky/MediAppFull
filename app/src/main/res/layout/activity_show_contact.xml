@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white_boarder1"
+    tools:context=".ShowContactActivity">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolbar_bar"/>
+
+    <ImageView
+        android:id="@+id/iconTel"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/useredit"
+        android:layout_marginTop="70dp"/>
+
+    <TextView
+        android:id="@+id/txtcont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Editar Contactos"
+        android:layout_below="@id/iconTel"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="40dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_below="@id/txtcont"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20sp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:elevation="10dp"
+            android:outlineAmbientShadowColor="@android:color/darker_gray"
+            android:background="@drawable/white_boarder"
+            tools:targetApi="p">
+
+            <TextView
+                android:id="@+id/Mname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textSize="50dp"
+                android:textStyle="bold"
+                app:met_textColor="#fff"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Numero Telefonico"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20sp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:elevation="10dp"
+            android:outlineAmbientShadowColor="@android:color/darker_gray"
+            android:background="@drawable/white_boarder"
+            tools:targetApi="p">
+
+            <TextView
+                android:id="@+id/Mphone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textSize="50dp"
+                android:textStyle="bold"
+                app:met_textColor="#fff"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="#21DF3E"
+            android:src="@drawable/ic_baseline_edit_24"
+            android:id="@+id/btneditC"
+            android:layout_marginBottom="5dp"
+            android:textSize="20dp"/>
+
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_baseline_delete_24"
+            android:background="#CA0707"
+            android:id="@+id/btnborrarC"
+            android:layout_marginBottom="5dp"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

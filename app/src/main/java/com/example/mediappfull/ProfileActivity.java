@@ -51,7 +51,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private TextView userName;
+    private TextView userName, AddContacts;
     private CircleImageView circleImageView;
     private FirebaseUser firebaseUser;
     private FirebaseAuth firebaseAuth;
@@ -76,6 +76,7 @@ public class ProfileActivity extends AppCompatActivity {
         imagesList = new ArrayList<>();
 
         userName = findViewById(R.id.username);
+        AddContacts = findViewById(R.id.contactos);
         circleImageView = findViewById(R.id.profileImage);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
@@ -100,6 +101,13 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(ProfileActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        AddContacts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this, ContactsActivity.class));
             }
         });
 
