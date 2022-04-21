@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -66,8 +68,24 @@ public class ShowRecipeActivity extends AppCompatActivity {
                 if(snapshot.exists()){
                     for(DataSnapshot ds: snapshot.getChildren()){
                         recipeName.setText("Nombre de la receta: \n" + ds.child("recipeName").getValue().toString());
-                        doctorName.setText("Nombre del medico: \n" + ds.child("doctorName").getValue().toString());
+                        //doctorName.setText("Nombre del medico: \n" + ds.child("doctorName").getValue().toString());
                         recipeNameS = ds.child("recipeName").getValue().toString();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        databaseReference.child(idContact).child("Recipes").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    for(DataSnapshot ds: snapshot.getChildren()){
+                        doctorName.setText("Nombre del medico: \n" + ds.child("doctorName").getValue().toString());
                     }
                 }
             }
@@ -112,6 +130,45 @@ public class ShowRecipeActivity extends AppCompatActivity {
 
                 databaseReference.child(idContact).child("showMedicament").push().setValue(showMed);
                 startActivity(new Intent(ShowRecipeActivity.this, ShowRecipeMedicamentActivity.class));
+                finish();
+            }
+        });
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                databaseReference.child(idContact).child("Recipes").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.exists()){
+                            for(DataSnapshot ds: snapshot.getChildren()){
+                                if(ds.child("recipeName").getValue().equals(recipeNameS)){
+                                    key = ds.getKey().toString();
+                                    databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("Recipes").child(key).removeValue();
+                                    databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("number2alert").removeValue();
+                                    databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("followMedicament").removeValue();
+
+                                    AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+                                    Intent i = new Intent(ShowRecipeActivity.this, Alarm.class);
+                                    PendingIntent pendingIntent = PendingIntent.getBroadcast(ShowRecipeActivity.this, 0, i , PendingIntent.FLAG_IMMUTABLE);
+                                    alarmManager.cancel(pendingIntent);
+                                    Toast.makeText(ShowRecipeActivity.this, "Funciono", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(ShowRecipeActivity.this, "No funciono", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+                databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("Show").removeValue();
+                Toast.makeText(ShowRecipeActivity.this, "Receta eliminada", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(ShowRecipeActivity.this, RecipeActivity.class));
                 finish();
             }
         });

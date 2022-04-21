@@ -120,10 +120,8 @@ public class RecipeActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if(snapshot.exists()){
                             databaseReference.child(auth.getCurrentUser().getUid()).child("followMedicament").removeValue();
-                            databaseReference.child(auth.getCurrentUser().getUid()).child("futureAlarm").removeValue();
                             databaseReference.child(auth.getCurrentUser().getUid()).child("Alarm").removeValue();
-                            databaseReference.child(auth.getCurrentUser().getUid()).child("numberContact").removeValue();
-                            databaseReference.child(auth.getCurrentUser().getUid()).child("follow").removeValue();
+                            databaseReference.child(auth.getCurrentUser().getUid()).child("number2alert").removeValue();
 
                             AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
                             Intent i = new Intent(RecipeActivity.this, Alarm.class);

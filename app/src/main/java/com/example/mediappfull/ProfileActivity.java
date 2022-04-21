@@ -51,7 +51,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private TextView userName, AddContacts, AddRecipe;
+    private TextView userName, AddContacts, AddRecipe, Medicaments, Alarms;
     private CircleImageView circleImageView;
     private FirebaseUser firebaseUser;
     private FirebaseAuth firebaseAuth;
@@ -78,6 +78,8 @@ public class ProfileActivity extends AppCompatActivity {
         userName = findViewById(R.id.username);
         AddContacts = findViewById(R.id.contactos);
         AddRecipe = findViewById(R.id.recetas);
+        Alarms = findViewById(R.id.alarmas);
+        Medicaments = findViewById(R.id.medicaments);
         circleImageView = findViewById(R.id.profileImage);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
@@ -116,6 +118,20 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ProfileActivity.this, RecipeActivity.class));
+            }
+        });
+
+        Medicaments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this, MedicamentListMainActivity.class));
+            }
+        });
+
+        Alarms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this, ShowAlarmsActivity.class));
             }
         });
 

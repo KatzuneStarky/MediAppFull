@@ -80,7 +80,6 @@ public class AddRecipeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Guardado", Toast.LENGTH_SHORT).show();
-                RefillRecipe();
                 startActivity(new Intent(AddRecipeActivity.this, Contact2AlertActivity.class));
                 finish();
             }
@@ -124,7 +123,7 @@ public class AddRecipeActivity extends AppCompatActivity {
                     AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
                     Calendar calendar = Calendar.getInstance();
                     Intent i = new Intent(AddRecipeActivity.this, Alarm.class);
-                    i.putExtra("ID", Nu);
+                    i.putExtra("id", Nu);
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(AddRecipeActivity.this, Nu, i, PendingIntent.FLAG_IMMUTABLE);
                     int min = Integer.parseInt(horasS);
                     int totalMin = calendar.get(Calendar.MINUTE) + min;

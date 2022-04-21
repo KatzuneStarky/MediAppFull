@@ -4,8 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E38112"
     tools:context=".ShowAlarmActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Es hora de tu medicamento"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textColor="#fff"
+        android:id="@+id/txt1"
+        android:textStyle="bold"
+        android:layout_margin="20dp"/>
 
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/imagebtn"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/txt1"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/alarm" />
+
+    <Button
+        android:id="@+id/quitarAlarma"
+        android:text="Quitar alarma"
+        android:textSize="20dp"
+        android:layout_below="@id/imagebtn"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:layout_height="80dp" />
+
+
+    <TextView
+        android:id="@+id/medTomar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@id/quitarAlarma"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:layout_margin="20dp"/>
 
 </RelativeLayout>

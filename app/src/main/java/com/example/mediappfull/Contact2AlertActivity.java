@@ -78,6 +78,7 @@ public class Contact2AlertActivity extends AppCompatActivity {
 
                                     databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("number2alert").push().setValue(number2alert);
                                     Toast.makeText(Contact2AlertActivity.this, "El contacto: " + contactN.getText().toString() + " sera alertado", Toast.LENGTH_SHORT).show();
+                                    System.out.println(contactN);
                                     startActivity(new Intent(Contact2AlertActivity.this, ProfileActivity.class));
                                     finish();
                                 }

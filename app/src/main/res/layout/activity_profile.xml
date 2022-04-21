@@ -63,49 +63,55 @@
             android:columnCount="2">
 
             <TextView
-                android:layout_width="150dp"
+                android:layout_width="170dp"
                 android:layout_height="150dp"
+                android:layout_gravity="center"
                 android:background="@drawable/rectangle"
                 android:text="Contactos"
                 android:gravity="center"
                 android:textColor="#fff"
                 android:textSize="25dp"
                 android:id="@+id/contactos"
-                android:layout_margin="20dp"
+                android:layout_margin="10dp"
                 android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/recetas"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:layout_gravity="center"
                 android:background="@drawable/rectangle"
                 android:text="Recetas"
                 android:gravity="center"
                 android:textColor="#fff"
                 android:textSize="25dp"
-                android:layout_margin="20dp"
+                android:layout_margin="10dp"
                 android:textStyle="bold"/>
 
             <TextView
-                android:layout_width="150dp"
+                android:id="@+id/medicaments"
+                android:layout_width="180dp"
                 android:layout_height="150dp"
                 android:background="@drawable/rectangle"
-                android:text=""
+                android:text="Medicamentos"
                 android:gravity="center"
+                android:layout_gravity="center"
                 android:textColor="#fff"
                 android:textSize="25dp"
-                android:layout_margin="20dp"
+                android:layout_margin="10dp"
                 android:textStyle="bold"/>
 
             <TextView
+                android:id="@+id/alarmas"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:background="@drawable/rectangle"
-                android:text=""
+                android:text="Alarmas"
                 android:gravity="center"
                 android:textColor="#fff"
                 android:textSize="25dp"
-                android:layout_margin="20dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
                 android:textStyle="bold"/>
 
         </GridLayout>
