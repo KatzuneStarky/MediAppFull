@@ -63,7 +63,7 @@ public class ContactsActivity extends AppCompatActivity {
                         values.add(ds.child("name").getValue().toString());
                     }
                 }else{
-                    Toast.makeText(ContactsActivity.this, "Fallo!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ContactsActivity.this, "No cuenta con contactos aun!", Toast.LENGTH_SHORT).show();
                 }
                 ArrayAdapter<String> adapter = new ArrayAdapter<>(ContactsActivity.this, android.R.layout.simple_list_item_1, values);
                 contactList.setAdapter(adapter);
@@ -71,7 +71,7 @@ public class ContactsActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(ContactsActivity.this, "Fallo!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ContactsActivity.this, "No cuenta con contactos aun!", Toast.LENGTH_SHORT).show();
             }
         });
 

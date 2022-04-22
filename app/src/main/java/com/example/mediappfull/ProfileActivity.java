@@ -94,11 +94,7 @@ public class ProfileActivity extends AppCompatActivity {
 
                 assert usersData != null;
                 userName.setText(usersData.getUsername());
-                if(usersData.getImageURL().equals("default")){
-                    circleImageView.setImageResource(R.drawable.ic_launcher_background);
-                }else{
-                    Glide.with(getApplicationContext()).load(usersData.getImageURL()).into(circleImageView);
-                }
+                Glide.with(getApplicationContext()).load(usersData.getImageURL()).into(circleImageView);
             }
 
             @Override

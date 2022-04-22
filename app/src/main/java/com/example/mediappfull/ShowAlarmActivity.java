@@ -6,7 +6,10 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -40,10 +43,11 @@ import pl.droidsonroids.gif.GifImageView;
 public class ShowAlarmActivity extends AppCompatActivity {
 
     private Button quitarAlarma;
+    public static final int requestCode = 9999;
     private TextView medTomar;
     private DatabaseReference reference;
     private FirebaseAuth auth;
-    private String quantity, via, name, number, medicamentName, idAlarm;
+    private String quantity, via, name, number, medicamentName, idAlarm, state, key;
     ArrayList<String> alertNumberArr = new ArrayList<String>();
     private int i = 0;
     private int SMS_PERMISSION_CODE= 1;
@@ -134,6 +138,9 @@ public class ShowAlarmActivity extends AppCompatActivity {
                 i=1;
                 System.out.println("El valor es: "+ i);
                 mediaPlayer.stop();
+                reference.child(auth.getCurrentUser().getUid()).child("idAlarm").removeValue();
+                reference.child(auth.getCurrentUser().getUid()).child("Messages").removeValue();
+
                 startActivity(new Intent(ShowAlarmActivity.this, ProfileActivity.class));
                 finish();
             }
@@ -156,22 +163,41 @@ public class ShowAlarmActivity extends AppCompatActivity {
                     int day = calendar.get(Calendar.DAY_OF_MONTH);
                     int month = calendar.get(Calendar.MONTH)+1;
 
-                    map.put("Estado", "Alarma Atendida");
-                    map.put("Hora", hour);
-                    map.put("Minutos", min);
-                    map.put("Dia", day);
-                    map.put("Mes", month);
-                    map.put("NombreMedicamento", medicamentName);
+                    map.put("Estado", "Atendida");
+                    map.put("horas", hour);
+                    map.put("minutos", min);
+                    map.put("dias", day);
+                    map.put("mes", month);
+                    map.put("medicamentName", medicamentName);
 
-                    reference.child(auth.getCurrentUser().getUid()).child("followMedicament").push().setValue(map);
+                    reference.child(auth.getCurrentUser().getUid()).child("followMedicament").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if(snapshot.exists()){
+                                for(DataSnapshot ds : snapshot.getChildren()){
+                                    key = ds.getKey();
+                                    reference.child(auth.getCurrentUser().getUid()).child("followMedicament").child(key).updateChildren(map);
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
                     Map<String, Object> AlarmMap = new HashMap<>();
                     AlarmMap.put("Hora", hour);
                     AlarmMap.put("Minutos", min);
                     AlarmMap.put("NombreMedicamento", medicamentName);
                     reference.child(auth.getCurrentUser().getUid()).child("Alarms").push().setValue(AlarmMap);
-                    i = 0;
+                    i = 2;
                     System.out.println("El valor es: "+ i);
+
+                    cancelAlarm();
                     reference.child(auth.getCurrentUser().getUid()).child("idAlarm").removeValue();
+                    finish();
                 }else if(i== 0){
                     Map<String, Object> map = new HashMap<>();
 
@@ -184,20 +210,37 @@ public class ShowAlarmActivity extends AppCompatActivity {
                     int month = calendar.get(Calendar.MONTH)+1;
 
                     map.put("Estado", "Alarma No Atendida");
-                    map.put("Hora", hour);
-                    map.put("Minutos", min);
-                    map.put("Dia", day);
-                    map.put("Mes", month);
-                    map.put("NombreMedicamento", medicamentName);
+                    map.put("horas", hour);
+                    map.put("minutos", min);
+                    map.put("dias", day);
+                    map.put("mes", month);
+                    map.put("medicamentName", medicamentName);
                     System.out.println("El valor es: "+ i);
 
-                    reference.child(auth.getCurrentUser().getUid()).child("followMedicament").push().setValue(map);
+                    reference.child(auth.getCurrentUser().getUid()).child("followMedicament").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if(snapshot.exists()){
+                                for(DataSnapshot ds : snapshot.getChildren()){
+                                    key = ds.getKey();
+                                    reference.child(auth.getCurrentUser().getUid()).child("followMedicament").child(key).updateChildren(map);
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
                     Map<String, Object> AlarmMap = new HashMap<>();
                     AlarmMap.put("Hora", hour);
                     AlarmMap.put("Minutos", min);
                     AlarmMap.put("NombreMedicamento", medicamentName);
                     reference.child(auth.getCurrentUser().getUid()).child("Alarms").push().setValue(AlarmMap);
-                    i = 0;
+
+                    i = 2;
                     reference.child(auth.getCurrentUser().getUid()).child("idAlarm").removeValue();
 
                     for(i = 0; i < alertNumberArr.size(); i ++){
@@ -222,7 +265,7 @@ public class ShowAlarmActivity extends AppCompatActivity {
                         mesageMap.put("phone", phone);
                         mesageMap.put("message", message);
                         reference.child(auth.getCurrentUser().getUid()).child("Messages").push().setValue(mesageMap);
-
+                        cancelAlarm();
                         reference.child(auth.getCurrentUser().getUid()).child("idAlarm");
                         finish();
                     }
@@ -231,6 +274,35 @@ public class ShowAlarmActivity extends AppCompatActivity {
                 reference.child(auth.getCurrentUser().getUid()).child("idAlarm");
             }
         }, miliseconds);
+    }
+
+    private void cancelAlarm() {
+        reference.child(auth.getCurrentUser().getUid()).child("followMedicament").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    for(DataSnapshot ds: snapshot.getChildren()){
+                        state = ds.child("Estado").getValue().toString();
+                        if(ds.child("Estado").getValue().toString().equals(state)){
+                            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                            Intent myIntent = new Intent(getApplicationContext(), Alarm.class);
+                            PendingIntent pendingIntent = PendingIntent.getBroadcast(
+                                    getApplicationContext(), 1, myIntent,
+                                    PendingIntent.FLAG_UPDATE_CURRENT);
+                            alarmManager.cancel(pendingIntent);
+                            Toast.makeText(ShowAlarmActivity.this, "La alarma se detuvo", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(ShowAlarmActivity.this, "La alarma no se detuvo", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void obtenerPermiso() {

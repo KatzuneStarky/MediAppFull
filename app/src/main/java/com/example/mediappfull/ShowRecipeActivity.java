@@ -147,14 +147,17 @@ public class ShowRecipeActivity extends AppCompatActivity {
                                     databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("Recipes").child(key).removeValue();
                                     databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("number2alert").removeValue();
                                     databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("followMedicament").removeValue();
+                                    databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("Messages").removeValue();
+                                    databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("Medicaments").removeValue();
+                                    databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("Alarms").removeValue();
+                                    databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("ContactNumber").removeValue();
+                                    databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("idAlarm").removeValue();
+                                    databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("showMedicament").removeValue();
 
                                     AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
                                     Intent i = new Intent(ShowRecipeActivity.this, Alarm.class);
                                     PendingIntent pendingIntent = PendingIntent.getBroadcast(ShowRecipeActivity.this, 0, i , PendingIntent.FLAG_IMMUTABLE);
                                     alarmManager.cancel(pendingIntent);
-                                    Toast.makeText(ShowRecipeActivity.this, "Funciono", Toast.LENGTH_SHORT).show();
-                                }else{
-                                    Toast.makeText(ShowRecipeActivity.this, "No funciono", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }

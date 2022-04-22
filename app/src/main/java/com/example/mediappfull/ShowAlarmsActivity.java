@@ -2,10 +2,12 @@ package com.example.mediappfull;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -35,6 +37,18 @@ public class ShowAlarmsActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listView);
         listView.setCacheColorHint(Color.RED);
         final ArrayList<String> values = new ArrayList<String>();
+
+        Toolbar toolbar = findViewById(R.id.toolbar1);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Alarmas");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ShowAlarmsActivity.this, ProfileActivity.class));
+            }
+        });
+
         reference.child(auth.getCurrentUser().getUid()).child("Alarms").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -47,7 +61,7 @@ public class ShowAlarmsActivity extends AppCompatActivity {
                         values.add("Hora de la alarma: " + hour + ":" + min);
                     }
                 }else{
-                    Toast.makeText(ShowAlarmsActivity.this, "No", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ShowAlarmsActivity.this, "No cuenta con alarmas activas", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(ShowAlarmsActivity.this, ProfileActivity.class));
                 }
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(ShowAlarmsActivity.this, android.R.layout.simple_list_item_1,values);
