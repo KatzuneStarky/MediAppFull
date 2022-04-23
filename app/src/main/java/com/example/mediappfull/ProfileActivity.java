@@ -19,6 +19,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,7 +53,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private TextView userName, AddContacts, AddRecipe, Medicaments, Alarms;
+    private TextView userName;
     private CircleImageView circleImageView;
     private FirebaseUser firebaseUser;
     private FirebaseAuth firebaseAuth;
@@ -63,6 +65,7 @@ public class ProfileActivity extends AppCompatActivity {
     private Uri uri;
     private StorageReference storageReference;
     private UsersData usersData;
+    private ImageButton AddContacts, AddRecipe, Medicaments, Alarms, FollowMed, Calendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,10 +79,12 @@ public class ProfileActivity extends AppCompatActivity {
         imagesList = new ArrayList<>();
 
         userName = findViewById(R.id.username);
-        AddContacts = findViewById(R.id.contactos);
-        AddRecipe = findViewById(R.id.recetas);
-        Alarms = findViewById(R.id.alarmas);
-        Medicaments = findViewById(R.id.medicaments);
+        AddContacts = (ImageButton) findViewById(R.id.contactos);
+        AddRecipe = (ImageButton) findViewById(R.id.recetas);
+        Alarms =  (ImageButton)findViewById(R.id.alarmas);
+        Medicaments = (ImageButton) findViewById(R.id.medicaments);
+        FollowMed = (ImageButton) findViewById(R.id.seguimiento);
+        Calendar = (ImageButton) findViewById(R.id.calendario);
         circleImageView = findViewById(R.id.profileImage);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
@@ -128,6 +133,20 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ProfileActivity.this, ShowAlarmsActivity.class));
+            }
+        });
+
+        FollowMed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this, FollowMedActivity.class));
+            }
+        });
+
+        Calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this, CalendarActivity.class));
             }
         });
 
@@ -255,9 +274,8 @@ public class ProfileActivity extends AppCompatActivity {
         }else if(id == R.id.data){
             startActivity(new Intent(ProfileActivity.this, DataUserActivity.class));
         } else if(id == R.id.logout){
-            firebaseAuth.signOut();
             startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
-            finish();
+            firebaseAuth.signOut();
         }
         return true;
     }

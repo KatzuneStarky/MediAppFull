@@ -282,18 +282,12 @@ public class ShowAlarmActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
                     for(DataSnapshot ds: snapshot.getChildren()){
-                        state = ds.child("Estado").getValue().toString();
-                        if(ds.child("Estado").getValue().toString().equals(state)){
-                            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-                            Intent myIntent = new Intent(getApplicationContext(), Alarm.class);
-                            PendingIntent pendingIntent = PendingIntent.getBroadcast(
-                                    getApplicationContext(), 1, myIntent,
-                                    PendingIntent.FLAG_UPDATE_CURRENT);
-                            alarmManager.cancel(pendingIntent);
-                            Toast.makeText(ShowAlarmActivity.this, "La alarma se detuvo", Toast.LENGTH_SHORT).show();
-                        }else{
-                            Toast.makeText(ShowAlarmActivity.this, "La alarma no se detuvo", Toast.LENGTH_SHORT).show();
-                        }
+                        String code = ds.child("idAlarm").getValue().toString();
+                        int codeA = Integer.parseInt(code);
+                        Intent i = new Intent(ShowAlarmActivity.this, Alarm.class);
+                        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+                        PendingIntent pendingIntent = PendingIntent.getBroadcast(ShowAlarmActivity.this, codeA, i, PendingIntent.FLAG_IMMUTABLE);
+                        alarmManager.cancel(pendingIntent);
                     }
                 }
             }

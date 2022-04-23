@@ -95,7 +95,7 @@ public class RecipeActivity extends AppCompatActivity {
                                     recipeData.put("recipeName", selectedRecipe);
                                     recipeData.put("doctorName", selectedName);
 
-                                    databaseReference.child(auth.getCurrentUser().getUid()).child("Show").push().setValue(recipeData);
+                                    databaseReference.child(auth.getCurrentUser().getUid()).child("ShowM").push().setValue(recipeData);
                                     startActivity(new Intent(RecipeActivity.this, ShowRecipeActivity.class));
                                 }
                             }

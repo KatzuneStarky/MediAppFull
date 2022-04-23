@@ -5,6 +5,9 @@
       <map>
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable-v24/white_boarder1.xml" value="0.156" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/button_text.xml" value="0.131" />
+        <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/dotgreen.xml" value="0.1" />
+        <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/dotred.xml" value="0.1" />
+        <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/dotyellow.xml" value="0.1" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/input_text.xml" value="0.156" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/orange_boarder.xml" value="0.131" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/drawable/rectangle.xml" value="0.156" />
@@ -12,21 +15,25 @@
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_add_contact.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_add_recipe.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_alarm.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_calendar.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_change_password.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_contact2_alert.xml" value="0.19" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_contacts.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_data_user.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_edit_contact.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_follow_med.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_forgot_password.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_medicament_list_main.xml" value="0.1" />
-        <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_profile.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_not_atended.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_recipe.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_register.xml" value="0.22" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_show_alarm.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_show_alarms.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_show_contact.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_show_medicament.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_show_recipe.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/activity_show_recipe_medicament.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Adan Ramirez/AndroidStudioProjects/MediAppFull/app/src/main/res/layout/bar_layout.xml" value="0.1675929884566054" />

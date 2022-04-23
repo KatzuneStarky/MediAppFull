@@ -40,7 +40,7 @@ public class ShowRecipeMedicamentActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ShowRecipeMedicamentActivity.this, ShowRecipeActivity.class));
+                startActivity(new Intent(ShowRecipeMedicamentActivity.this, ProfileActivity.class));
             }
         });
 
@@ -52,7 +52,7 @@ public class ShowRecipeMedicamentActivity extends AppCompatActivity {
         medicaments = (TextView) findViewById(R.id.medicamentName);
         delete = (Button) findViewById(R.id.delete);
 
-        database.child(auth.getCurrentUser().getUid()).child("Show").addListenerForSingleValueEvent(new ValueEventListener() {
+        database.child(auth.getCurrentUser().getUid()).child("ShowM").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
@@ -74,6 +74,7 @@ public class ShowRecipeMedicamentActivity extends AppCompatActivity {
                 if(snapshot.exists()){
                     for(DataSnapshot ds: snapshot.getChildren()){
                         medicament = ds.child("medicamentName").getValue().toString();
+
                     }
                 }
             }
@@ -83,6 +84,8 @@ public class ShowRecipeMedicamentActivity extends AppCompatActivity {
 
             }
         });
+
+        System.out.println("Nombre medicamento" + medicament);
 
         database.child(auth.getCurrentUser().getUid()).child("Medicaments").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -95,6 +98,8 @@ public class ShowRecipeMedicamentActivity extends AppCompatActivity {
                             medicaments.setText("Medicamento: " + medicament);
                             via.setText("Via: " + ds.child("via").getValue().toString());
                             gramos.setText("Gramos: " + ds.child("gramos").getValue().toString());
+                        }else{
+                            Toast.makeText(ShowRecipeMedicamentActivity.this, "No hay data", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }

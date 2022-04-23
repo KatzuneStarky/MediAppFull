@@ -19,16 +19,16 @@
         >
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImage"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:id="@+id/profileImage"
-            android:layout_marginTop="40dp"
-            app:civ_border_width="2dp"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:paddingTop="8dp"
             android:src="@mipmap/ic_launcher_round"
             app:civ_border_color="#fff"
-            android:layout_centerHorizontal="true"
-            android:paddingTop="8dp"/>
+            app:civ_border_width="2dp" />
 
         <TextView
             android:id="@+id/username"
@@ -56,67 +56,177 @@
         android:backgroundTint="#fff"
         android:layout_marginBottom="-50dp">
 
-        <GridLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:columnCount="2">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="170dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:background="@drawable/rectangle"
-                android:text="Contactos"
-                android:gravity="center"
-                android:textColor="#fff"
-                android:textSize="25dp"
-                android:id="@+id/contactos"
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/recetas"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:background="@drawable/rectangle"
-                android:text="Recetas"
-                android:gravity="center"
-                android:textColor="#fff"
-                android:textSize="25dp"
-                android:layout_margin="10dp"
-                android:textStyle="bold"/>
+                android:columnCount="2">
 
-            <TextView
-                android:id="@+id/medicaments"
-                android:layout_width="180dp"
-                android:layout_height="150dp"
-                android:background="@drawable/rectangle"
-                android:text="Medicamentos"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:textColor="#fff"
-                android:textSize="25dp"
-                android:layout_margin="10dp"
-                android:textStyle="bold"/>
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/alarmas"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:background="@drawable/rectangle"
-                android:text="Alarmas"
-                android:gravity="center"
-                android:textColor="#fff"
-                android:textSize="25dp"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:textStyle="bold"/>
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/contacts"
+                        android:id="@+id/contactos"
+                        android:layout_gravity="center"
+                        />
 
-        </GridLayout>
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="150dp"
+                        android:text="Contactos"
+                        android:textColor="#000"
+                        android:textSize="25dp"
+                        android:textAlignment="center"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/recipe"
+                        android:id="@+id/recetas"
+                        android:layout_gravity="center"
+                        />
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="150dp"
+                        android:text="Recetas"
+                        android:textColor="#000"
+                        android:textSize="25dp"
+                        android:textAlignment="center"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/medicine"
+                        android:id="@+id/medicaments"
+                        android:layout_gravity="center"
+                        />
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="150dp"
+                        android:text="Medicamentos"
+                        android:textColor="#000"
+                        android:textSize="25dp"
+                        android:textAlignment="center"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/alarmico"
+                        android:id="@+id/alarmas"
+                        android:layout_gravity="center"
+                        />
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="150dp"
+                        android:text="Alarmas"
+                        android:textColor="#000"
+                        android:textSize="25dp"
+                        android:textAlignment="center"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/follow"
+                        android:id="@+id/seguimiento"
+                        android:layout_gravity="center"
+                        />
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="50dp"
+                        android:text="Seguimiento"
+                        android:textColor="#000"
+                        android:textSize="25dp"
+                        android:textAlignment="center"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/calendar"
+                        android:id="@+id/calendario"
+                        android:layout_gravity="center"
+                        />
+
+                    <TextView
+                        android:layout_width="170dp"
+                        android:layout_height="50dp"
+                        android:text="Calendario"
+                        android:textColor="#000"
+                        android:textSize="25dp"
+                        android:textAlignment="center"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </GridLayout>
+
+        </ScrollView>
 
     </androidx.cardview.widget.CardView>
-
 
 </LinearLayout>

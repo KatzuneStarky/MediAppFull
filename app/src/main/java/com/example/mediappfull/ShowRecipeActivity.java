@@ -62,7 +62,7 @@ public class ShowRecipeActivity extends AppCompatActivity {
         recipeList = (ListView) findViewById(R.id.recipeList);
         delete = findViewById(R.id.delete);
 
-        databaseReference.child(idContact).child("Show").addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.child(idContact).child("ShowM").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
@@ -129,7 +129,7 @@ public class ShowRecipeActivity extends AppCompatActivity {
                 showMed.put("medicamentName", listName);
 
                 databaseReference.child(idContact).child("showMedicament").push().setValue(showMed);
-                startActivity(new Intent(ShowRecipeActivity.this, ShowRecipeMedicamentActivity.class));
+                startActivity(new Intent(ShowRecipeActivity.this, ShowMedicamentActivity.class));
                 finish();
             }
         });
@@ -153,6 +153,7 @@ public class ShowRecipeActivity extends AppCompatActivity {
                                     databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("ContactNumber").removeValue();
                                     databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("idAlarm").removeValue();
                                     databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("showMedicament").removeValue();
+                                    databaseReference.child(firebaseAuth.getCurrentUser().getUid()).child("showM").removeValue();
 
                                     AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
                                     Intent i = new Intent(ShowRecipeActivity.this, Alarm.class);

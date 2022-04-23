@@ -34,8 +34,8 @@ public class ShowContactActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_contact);
 
-        Mname  = findViewById(R.id.Mname);
-        Mphone = findViewById(R.id.Mphone);
+        Mname  = (TextView) findViewById(R.id.Mname);
+        Mphone = (TextView) findViewById(R.id.Mphone);
 
         editbtn = findViewById(R.id.btneditC);
         deletebtn = findViewById(R.id.btnborrarC);
@@ -59,11 +59,26 @@ public class ShowContactActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
                     for (DataSnapshot ds: snapshot.getChildren()){
-                        key = ds.child("id").getValue().toString();
-                        showKey =ds.getKey().toString();
+                        showKey = ds.getKey();
 
                         Mname.setText(ds.child("name").getValue().toString());
                         Mphone.setText(ds.child("number").getValue().toString());
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        mDatabase.child(mAuth.getCurrentUser().getUid()).child("Contacts").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    for (DataSnapshot ds: snapshot.getChildren()){
+                        key = ds.getKey();
                     }
                 }
             }

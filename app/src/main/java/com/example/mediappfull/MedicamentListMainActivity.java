@@ -83,7 +83,7 @@ public class MedicamentListMainActivity extends AppCompatActivity {
                                     show.put("medicamentName", listname);
                                     show.put("recipeName", recipeO);
 
-                                    reference.child(auth.getCurrentUser().getUid()).child("Show").push().setValue(show);
+                                    reference.child(auth.getCurrentUser().getUid()).child("ShowM").push().setValue(show);
                                     startActivity(new Intent(MedicamentListMainActivity.this, ShowRecipeMedicamentActivity.class));
                                     finish();
                                 }
