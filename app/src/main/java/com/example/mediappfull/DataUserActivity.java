@@ -64,7 +64,7 @@ public class DataUserActivity extends AppCompatActivity {
                 correoE.setText(usersData.getEmail());
                 edad.setText(usersData.getAge() + " años");
                 peso.setText(usersData.getWeight() + "Kg");
-                altura.setText(usersData.getHeight() + "M");
+                altura.setText(usersData.getHeight() + "Cm");
                 if(usersData.getImageURL().equals("default")){
                     circleImageView.setImageResource(R.drawable.ic_launcher_background);
                 }else{
